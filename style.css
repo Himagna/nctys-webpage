@@ -1,0 +1,180 @@
+:root {
+  --c1: #ffcdb2;
+  --c2: #ffb4a2;
+  --c3: #e5989b;
+  --c4: #b5838d;
+  --c5: #6d6875;
+  --font: "connection";
+}
+/** { border: 1px solid red; }*/
+html {
+  min-height: 100%;
+  position: relative;
+  cursor: url("cursor.png"), auto;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom right,
+    var(--c3),
+    var(--c2),
+    var(--c1),
+    var(--c3),
+    var(--c2),
+    var(--c1)
+  );
+  background-size: 400vh 400vh;
+  background-repeat: repeat;
+  animation: bgScroll 3s linear infinite;
+  color: var(--c5);
+  font-family: var(--font);
+  font-size: 25px;
+  font-weight: bold;
+}
+h1 {
+  text-align: center;
+}
+
+::selection {
+  color: var(--c1);
+  background: var(--c5);
+}
+a:link {
+  color: var(--c4);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--c3);
+}
+.link:hover {
+  cursor: url("cursor.png"), auto;
+}
+.button {
+  display: inline-block;
+  padding: 10px 25px;
+  margin-bottom: 20px;
+  width: 250px;
+  height: 55px;
+  font-family: var(--font);
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: url("cursor.png"), auto;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: var(--c5);
+  background-color: var(--c1);
+  border: 2px solid var(--c5);
+  border-radius: 2px;
+  box-shadow: 0 9px var(--c4);
+  animation: ease-out 0s 1 slideInFromLeft;
+}
+
+.button:hover {
+  color: var(--c1);
+  background-color: var(--c5);
+}
+
+.button:active {
+  background-color: var(--c5);
+  box-shadow: 0 5px var(--c4);
+  transform: translateY(4px);
+}
+.emoji {
+  color: transparent;
+  text-shadow: 0 0 0 var(--c5);
+}
+.hovering {
+  animation: hover 2s linear infinite;
+}
+.slideIn {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.rotate:hover {
+  animation: clockwise 5s linear infinite;
+  animation-fill-mode: both;
+}
+@font-face {
+  font-family: connection;
+  src: url(Connection.otf);
+}
+/*@font-face {
+  font-family: DiaryOfAn8BitMage;
+  src: url(DiaryOfAn8BitMage.ttf);
+}
+@font-face {
+  font-family: VerminVibes;
+  src: url(VerminVibes.ttf);
+}
+
+@font-face {
+  font-family: WayfarersToyBox;
+  src: url(WayfarersToyBox.ttf);
+}*/
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  75% {
+    transform: translateX(10%);
+  }
+  90% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes bgScroll {
+  0% {
+    background-position: 0% 0%;
+  }
+  /*50% {
+    background-position: 50% 50%;
+  }*/
+  100% {
+    background-position: 100% 100%;
+  }
+  /*75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }*/
+}
+
+@keyframes hover {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(2%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes clockwise {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+.neon{
+	animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow{
+	0%{text-shadow: 0 0 10px var(--c1), 0 0 20px var(--c1), 0 0 30px var(--c2), 0 0 40px var(--c3), 0 0 50px var(--c4), 0 0 60px var(--c4), 0 0 70px var(--c5);}
+	100%{text-shadow: 0 0 20px var(--c1), 0 0 30px var(--c1), 0 0 40px var(--c2), 0 0 50px var(--c4), 0 0 60px var(--c4), 0 0 70px var(--c4), 0 0 80px var(--c5);}
+}
+*/
